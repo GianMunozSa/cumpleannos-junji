@@ -153,7 +153,7 @@ def crear_pdf(nombre, apellidoPaterno, apellidoMaterno, dia, mes, año, nombrePd
     final2 = "Dirección Regional JUNJI Biobío"
 
     pdf.set_font('Helvetica', 'B', 30)
-    pdf.multi_cell(0, 20, texto_principal00)
+    pdf.multi_cell(0, 10, texto_principal00)
     pdf.set_font('Helvetica', 'BU', 40)
     pdf.multi_cell(0, 20, texto_principal2, align='C')
     pdf.set_font('Helvetica', 'B', 20)
@@ -243,19 +243,19 @@ def main():
     #crear_pdf('Martín', 'Morales', 'Castro', '21', '12')
     #crear_imagen('cumple.pdf')
     #enviar_correo('cumple.png')
-#main()
+main()
 #leer_Excel('cumple_funcionario_correo.xlsx')
 #crear_pdf('Marcelo', "Escobar", "Quezada", '1', '1', '1800', "cumple.pdf")
 #crear_imagen('cumple.pdf')
 
-def job():
-    print("Ejecutando tarea programada...")
-    main()  # Llama a la función principal
+# def job():
+#     print("Ejecutando tarea programada...")
+#     main()  # Llama a la función principal
 
-schedule.every().day.at("08:30").do(job)
-#schedule.every(1).minutes.do(job)
+# schedule.every().day.at("14:57").do(job)
+# #schedule.every(1).minutes.do(job)
 
-if __name__ == "__main__":
-    while True:
-        schedule.run_pending()
-        time.sleep(1)
+# if __name__ == "__main__":
+#     while True:
+#         schedule.run_pending()
+#         time.sleep(1)
