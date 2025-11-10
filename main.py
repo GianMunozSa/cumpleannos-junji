@@ -67,8 +67,7 @@ def Leer_Hoja(ws):
             paterno = ws['D' + str(row)].value.strip()
             materno = ws['E' + str(row)].value.strip()
             #nombrepdf = 'cumple_' + str(row) + ".pdf"
-            #correo = ws['T' + str(row)].value.strip()
-            correo='gianmunoz.sand@gmail.com'
+            correo = ws['T' + str(row)].value.strip()
             nombrepdf = "cumple.pdf"
 
             print(nombre + "|")
@@ -81,7 +80,7 @@ def Leer_Hoja(ws):
             nombreImagen = crear_imagen(nombrepdf)
             enviar_correo(nombreImagen, correo, nombre, paterno, materno)
             #Enviar copia a Marti
-            #enviar_correo(nombreImagen, 'mferrerol@junji.cl', nombre, paterno, materno)
+            enviar_correo(nombreImagen, 'mferrerol@junji.cl', nombre, paterno, materno)
     pass
 
 
@@ -154,7 +153,7 @@ def crear_pdf(nombre, apellidoPaterno, apellidoMaterno, dia, mes, año, nombrePd
     final2 = "Dirección Regional JUNJI Biobío"
 
     pdf.set_font('Helvetica', 'B', 30)
-    pdf.multi_cell(0, 10, texto_principal00)
+    pdf.multi_cell(0, 25, texto_principal00)
     pdf.set_font('Helvetica', 'BU', 40)
     pdf.multi_cell(0, 20, texto_principal2, align='C')
     pdf.set_font('Helvetica', 'B', 20)
