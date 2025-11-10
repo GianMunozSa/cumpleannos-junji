@@ -67,7 +67,8 @@ def Leer_Hoja(ws):
             paterno = ws['D' + str(row)].value.strip()
             materno = ws['E' + str(row)].value.strip()
             #nombrepdf = 'cumple_' + str(row) + ".pdf"
-            correo = ws['T' + str(row)].value.strip()
+            #correo = ws['T' + str(row)].value.strip()
+            correo='gianmunoz.sand@gmail.com'
             nombrepdf = "cumple.pdf"
 
             print(nombre + "|")
@@ -80,7 +81,7 @@ def Leer_Hoja(ws):
             nombreImagen = crear_imagen(nombrepdf)
             enviar_correo(nombreImagen, correo, nombre, paterno, materno)
             #Enviar copia a Marti
-            enviar_correo(nombreImagen, 'mferrerol@junji.cl', nombre, paterno, materno)
+            #enviar_correo(nombreImagen, 'mferrerol@junji.cl', nombre, paterno, materno)
     pass
 
 
@@ -243,19 +244,19 @@ def main():
     #crear_pdf('Martín', 'Morales', 'Castro', '21', '12')
     #crear_imagen('cumple.pdf')
     #enviar_correo('cumple.png')
-main()
+#main()
 #leer_Excel('cumple_funcionario_correo.xlsx')
 #crear_pdf('Marcelo', "Escobar", "Quezada", '1', '1', '1800', "cumple.pdf")
 #crear_imagen('cumple.pdf')
 
-# def job():
-#     print("Ejecutando tarea programada...")
-#     main()  # Llama a la función principal
+def job():
+    print("Ejecutando tarea programada...")
+    main()  # Llama a la función principal
 
-# schedule.every().day.at("14:57").do(job)
-# #schedule.every(1).minutes.do(job)
+schedule.every().day.at("08:30").do(job)
+#schedule.every(1).minutes.do(job)
 
-# if __name__ == "__main__":
-#     while True:
-#         schedule.run_pending()
-#         time.sleep(1)
+if __name__ == "__main__":
+    while True:
+        schedule.run_pending()
+        time.sleep(1)
